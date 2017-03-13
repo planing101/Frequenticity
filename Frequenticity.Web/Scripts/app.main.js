@@ -81,12 +81,15 @@
         main.startTimer = function () {
             var param = app.getParameterByName("interval");
 
-            if (param) {
-                time = param.getInteger() * 1000;
-                main.intervalTimer = setInterval(function () { main.run(); }, time);
+            // Set default time interval if none passed
+            if (!param)
+                param = "15"; 
 
-                main.countdownTimer = setInterval(function () { main.countdown(param); }, 1000);
-            }
+            var time = param.getInteger() * 1000;
+
+            main.intervalTimer = setInterval(function () { main.run(); }, time);
+
+            main.countdownTimer = setInterval(function () { main.countdown(param); }, 1000);
         };
 
         main.stopTimer = function () {
