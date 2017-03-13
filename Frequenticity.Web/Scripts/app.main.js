@@ -20,7 +20,7 @@
             var numCheckCtrl = $("#numCheck");
             if (numCheckCtrl) {
                 var checkNumber = numCheckCtrl.val().getInteger();
-                if (checkNumber > 0) {
+                if (checkNumber >= 0) {
                     // Check value against Fibonacci sequence
                     var isFibNumber = main.checkFibonacci(checkNumber);
                     if (isFibNumber)
