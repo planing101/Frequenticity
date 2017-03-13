@@ -1,0 +1,84 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+.jumbotron {  
+    background-color: #eeeeee !important;														            /* Fallback */
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#fff)) !important;	/* Safari 4, Chrome 1-9, iOS 3.2-4.3, Android 2.1-3.0 */
+    background-image: -webkit-linear-gradient(top, #eeeeee, #fff) !important;						        /* Safari 5.1, iOS 5.0-6.1, Chrome 10-25, Android 4.0-4.3 */
+    background-image: -moz-linear-gradient(top, #eeeeee, #fff) !important;							        /* Firefox 3.6 - 15 */
+    background-image: -o-linear-gradient(top, #eeeeee, #fff) !important;							        /* Opera 11.1 - 12 */
+    background-image: linear-gradient(to bottom, #eeeeee, #fff) !important;						            /* Opera 15+, Chrome 25+, IE 10+, Firefox 16+, Safari 6.1+, iOS 7+, Android 4.4+ */
+}
+
+/* Home */
+
+.navbar-title {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: normal;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 15px;
+    margin-left: -15px;
+    margin-bottom: 0;
+}
+
+.interval-input {
+    width: 100px;
+}
+
+input.required {
+    border-color: red;
+}
+
+/* Main */
+.main-actions {
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-bottom: 30px;
+}
+
+.main-textarea-wrapper {
+    padding: 0 75px;
+}
+
+.main-textarea-input {
+    max-width: none;
+    width: 100%;
+}
+
+.timer-halt {
+    margin-right: 5px;
+}
+
+.timer-resume {
+    margin-right: 15px;
+}
+
+.timer-wrapper {
+    color: darkgrey;
+    font-size: 18px;
+    vertical-align: middle;
+}

@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Main";
+}
+<div class="jumbotron">
+    <h1>Input number</h1>
+    <p class="lead">Enter a number and click CHECK to store the number and check whether it is part of the fibonacci sequence.</p>
+    <div class="row">
+        <div class="col-md-6">
+            <input id="numCheck" type="number" class="form-control input-lg interval-input" placeholder="0" autofocus />
+        </div>
+        <div class="col-md-6 text-right">
+            <input type="button" class="btn btn-primary btn-lg" value="CHECK" onclick="app.main.checkInput_OnClick(this)" />
+        </div>
+    </div>
+</div>
+<div class="row main-actions">
+    <div class="col-md-6">
+        <input type="button" class="btn btn-warning btn-lg timer-halt" value="HALT" onclick="app.main.stopTimer()" />&nbsp;
+        <input type="button" class="btn btn-success btn-lg timer-resume" value="RESUME" onclick="app.main.startTimer()" />&nbsp;
+        
+        <!-- Show countdown -->
+        <span id="tmrCountdown" class="timer-wrapper"><span id="tmrSeconds">0</span> Seconds Remaining</span>
+    </div>
+    <div class="col-md-6 text-right">
+        @Html.ActionLink("QUIT", "Index", new { controller = "Home" }, new { @class = "btn btn-danger btn-lg", onclick = "alert('Thanks for playing')" })
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 main-textarea-wrapper">
+        @Html.TextArea("txtLog", "", 8, 1, new { @class = "main-textarea-input" })
+    </div>
+</div>
