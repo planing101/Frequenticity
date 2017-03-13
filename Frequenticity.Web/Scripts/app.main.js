@@ -1,11 +1,16 @@
 ﻿(function (app, undefined) {
     (function (main, undefined) {
 
+        // ======================================
+        //  Initialize Variables in Module Scope
+        // ======================================
+
         var inputValueList = null;
-        var outputValueList = null;
 
         main.countdownTimer = null;
         main.intervalTimer = null;
+
+        main.fibSequence = null;
 
         // ================
         //  Control Events
@@ -16,7 +21,7 @@
             if (numCheckCtrl) {
                 var checkNumber = numCheckCtrl.val().getInteger();
                 if (checkNumber > 0) {
-                    // Check against Fibonacci sequence
+                    // Check value against Fibonacci sequence
                     var isFibNumber = main.checkFibonacci(checkNumber);
                     if (isFibNumber)
                         alert('FIB');
@@ -39,11 +44,8 @@
         // =========
 
         main.checkFibonacci = function (value) {
-            var isFib = false;
-
-
-
-            return isFib;
+            // Search for value in Fibonaccia sequence
+            return main.fibSequence.indexOf(value) > 0 ? true : false;
         };
 
         main.countdown = function (timeInterval) {
@@ -58,6 +60,21 @@
                     tmrSeconds.html(timeInterval);
 
                 tmrCountdown.removeClass("halted");
+            }
+        };
+
+        main.generateFibonacciSequence = function () {
+            var maxIterations = 1000;
+
+            main.fibSequence = new Array();
+
+            for (i = 0; i < maxIterations; i++) {
+                if (main.fibSequence.length == 0)
+                    main.fibSequence.push(0);
+                else if (main.fibSequence.length == 1)
+                    main.fibSequence.push(1);
+                else
+                    main.fibSequence.push(main.fibSequence[i - 1] + main.fibSequence[i - 2]);
             }
         };
 
@@ -139,8 +156,10 @@
         // ============
 
         main.init = function () {
+            // Initialize Variables
             main.inputValueList = new Array();
-            //main.outputValueList = new Array();
+
+            main.generateFibonacciSequence();
 
             main.startTimer();
 
